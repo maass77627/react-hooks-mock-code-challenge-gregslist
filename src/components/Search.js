@@ -1,9 +1,26 @@
 import React from "react";
+import {useState} from "react";
 
-function Search() {
+function Search({searchChange}) {
+
+  const [searchData, setSearchData] = useState("hello")
+
+  function handleChange(event) {
+    console.log(event.target.value)
+    setSearchData(event.target.value)
+    console.log(searchData)
+  }
+
   function handleSubmit(e) {
     e.preventDefault();
-    console.log("submitted");
+    //console.log(e.target.value)
+    //setSearchData(e.target.value)
+    console.log(searchData)
+    searchChange(searchData)
+
+    //fetch(`http://localhost:6001/listings`)
+    //.then((response) => response.json())
+    //.then((data) => { console.log(data)})
   }
 
   return (
@@ -12,8 +29,8 @@ function Search() {
         type="text"
         id="search"
         placeholder="search free stuff"
-        value={""}
-        onChange={(e) => console.log(e.target.value)}
+        value={searchData}
+        onChange={handleChange}
       />
       <button type="submit">🔍</button>
     </form>
