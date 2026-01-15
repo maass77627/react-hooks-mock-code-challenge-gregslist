@@ -13,14 +13,8 @@ function Search({searchChange}) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    //console.log(e.target.value)
-    //setSearchData(e.target.value)
     console.log(searchData)
     searchChange(searchData)
-
-    //fetch(`http://localhost:6001/listings`)
-    //.then((response) => response.json())
-    //.then((data) => { console.log(data)})
   }
 
   return (

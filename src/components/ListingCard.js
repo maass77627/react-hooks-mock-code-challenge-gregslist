@@ -15,7 +15,7 @@ function handleDelete() {
   fetch(`http://localhost:6001/listings/${id}`, {
     method: "DELETE"
   })
-  //console.log(listings)
+  
 }
 
 
